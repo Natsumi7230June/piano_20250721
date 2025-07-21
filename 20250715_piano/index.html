@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>はなピアノ教室</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 onclick="showHome()"style ="cursor: pointer;">はなピアノ教室</h1>
+    <nav>
+      <ul>
+        <!-- <li><button onclick="showSection('about')">教室紹介</button></li> -->
+        <li><button onclick="showSection('news')">お知らせ</button></li>
+        <li><button onclick="showSection('courses')">レッスンコース</button></li>
+        <li><button onclick="showSection('pricing')">料金案内</button></li>
+        <li><button onclick="showSection('instructor')">講師紹介</button></li>
+        <li><button onclick="showSection('trial')">体験レッスン</button></li>
+        <li><button onclick="showSection('contact')">お問い合わせ</button></li>
+      </ul>
+    </nav>
+  </header>
+
+ <section class="hero">
+  <div class="hero-content">
+    <h2>音楽のある毎日を</h2>
+    <p>初心者から本格派まで、一人ひとりに寄り添ったレッスンを。</p>
+  </div>
+</section>
+ <section class="about">
+  <div class="about-content">
+    <p>静かな住宅街にあるアットホームなピアノ教室です。<br>3歳から大人まで、幅広い世代の生徒さんがいらっしゃいます。</p>
+  </div>
+</section>
+
+  <section id="courses" class="tab-content" style="display: none;">
+    <h2>レッスンコース</h2>
+      <li>こどもレッスン（3歳〜）</li>
+      <li>大人の趣味コース</li>
+      <li>音高・音大受験対策</li>
+  
+  </section>
+
+  <section id="news" class="tab-content" style="display: none;">
+    <h2>お知らせ</h2>
+      
+  </section>
+
+  <section id="pricing" class="tab-content" style="display: none;">
+    <h2>料金案内</h2>
+    <p>月謝制、チケット制からお選びいただけます。</p>
+
+    <h3>月謝制</h3>
+      <li>1回30分×月3回　6000円</li>  
+      <li>1回45分×月3回　9000円</li>
+   
+    <h3>チケット制</h3>
+      <li>1回30分　3000円</li>  
+        
+  </section>
+
+  <section id="instructor" class="tab-content instructor-section" style="display: none;">
+    <h2>講師紹介</h2>
+    <p>名前：野口はな（のぐち　はな）</p><br>
+    <p>経歴：<br>
+    子どものころからピアノに親しみ、音楽の楽しさを実感。<br>
+    都内の東京音楽短期大学 幼児教育科卒業。<br>
+    卒業後は保育園や児童施設での勤務経験を積み、10年以上にわたって幼児への音楽指導やリトミック教育に携わる。<br>
+    現在は、ピアノを通して子どもの感性や表現力を育むレッスンに力を入れている。</p><br>
+    <p>あいさつ：<br>
+    こんにちは。講師の野口はなです。<br>
+    これまで保育や幼児教育の現場で、たくさんの子どもたちと音楽を通して関わってきました。<br>
+    「できた！」「たのしい！」という小さな達成感を積み重ねることで、音楽を好きになる心が育まれていきます。<br>
+    やさしく、あたたかく、一人ひとりの気持ちに寄り添いながら、笑顔あふれるレッスンを行っていきたいと思っています。
+    どうぞよろしくお願いいたします。</p>
+  </section>
+
+  <section id="trial" class="tab-content" style="display: none;">
+    <h2>体験レッスン</h2>
+    <p>随時、無料体験レッスンを受け付けております。</p>
+    <p>ご興味のある方は、<span onclick="showSection('contact')"style= "color:blue; text-decoration: underline; cursor: pointer;"> お問い合わせページ</span>よりご連絡ください。 </p>
+  </section>
+
+  <section id="contact" class="tab-content" style="display: none;">
+    <h2>お問い合わせ</h2>
+    <p>電話：000-0000-0000 / メール：info@hana-piano.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 はなピアノ教室</p>
+  </footer>
+
+  <!-- ✅ JavaScriptをここに追加 -->
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.tab-content');
+      sections.forEach ( section => {
+        section.style.display = 'none';
+      });
+      document.querySelector('.hero').style.display = 'none';
+      document.querySelector('.about').style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function showHome(){
+      const sections =document.querySelectorAll('.tab-content');
+      sections.forEach ( section => {
+        section.style.display = 'none';
+    });
+      document.querySelector('.hero').style.display = 'block';
+      document.querySelector('.about').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
